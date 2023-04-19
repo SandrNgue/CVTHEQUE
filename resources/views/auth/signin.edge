@@ -1,0 +1,18 @@
+<form method="post">
+    @!component('component/input', {
+        type: "email",
+        name: "email",
+        label: "Email",
+        required: true,
+        placeholder: "sandranguessong@gmail.com",
+    })
+
+     @!component('component/input', {
+        type: "password",
+        name: "password",
+        label: "Password",
+        required: true,
+        placeholder: "*********",
+    })
+    <button type="submit">Sign In</button>   
+</form>

@@ -1,0 +1,18 @@
+@layout('layouts/main')
+@set('title', 'Home')
+
+@section('body')
+    <main>
+        <div>
+            <h1 class="text-blue-500 font-bold hover:opacity-75">HELLO WORLD</h1>
+        </div>
+    </main>
+
+    @if(isLoggedIn)
+        <form action=" {{ route("signout")+ "?_method=DELETE" }}" method="POST">
+            <button type="submit">SIGN OUT</button>
+        </form>
+    @else
+    <a href="{{ route("login")}}">Login</a>
+
+@end
