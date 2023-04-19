@@ -21,17 +21,13 @@
 import Route from '@ioc:Adonis/Core/Route'
 import AuthController from 'App/Controllers/Http/AuthController'
 
-Route.get('/', async () => {
-  return { hello: 'world' }
-})
-
 Route.get('/signup', 'AutController.signupShow').as('signupShow')
 Route.post('/signup', 'AutController.signup').as('signup')
-Route.get('/', ({auth,view}) =>{
+Route.get('/', ({auth,view}) => {
     console.log(auth.user?.email)
     return view.render('welcome', {
       isLoggedIn: auth.isLoggedIn,
-    } 
+    }
     )
 })
 Route.delete('/signout', 'AuthController.signout').as('signout')
