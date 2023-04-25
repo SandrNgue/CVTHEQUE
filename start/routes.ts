@@ -19,11 +19,10 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
-import AuthController from 'App/Controllers/Http/AuthController'
-
-Route.get('/', async () => {
+/** import AuthController from 'App/Controllers/Http/AuthController'*/
+/**Route.get('/', async () => {
   return { hello: 'world' }
-})
+}) */
 
 Route.get('/signup', 'AutController.signupShow').as('signupShow')
 Route.post('/signup', 'AutController.signup').as('signup')
