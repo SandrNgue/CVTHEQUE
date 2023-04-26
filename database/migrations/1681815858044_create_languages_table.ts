@@ -6,9 +6,9 @@ export default class Languages extends BaseSchema{
     public async up() {
         this.schema.createTable(this.tableName, (table) => {
             table.engine('InnoDB')
-            table.increments('idLanguage').unsigned().primary()
-            table.string('Title').unsigned().defaultTo
-            table.integer('Level').unsigned().notNullable()
+            table.increments('idLanguage').primary()
+            table.string('Title').nullable()
+            table.integer('Level').nullable()
         })
     }
 

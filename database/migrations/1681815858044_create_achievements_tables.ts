@@ -8,20 +8,20 @@ export default class achievement extends BaseSchema{
         this.schema.createTable(this.tableName, (table) => {
             table.engine('InnoDB')
             table.increments('idAchievement').primary()
-            table.string('name').unsigned().notNullable()
-            table.string('status').unsigned().notNullable()
-            table.timestamp('FirstDate').notNullable()
-            table.timestamp('LastDate').notNullable()
-            table.string('TeamManager').unsigned().notNullable()
-            table.string('partners').unsigned().notNullable()
-            table.string('Urlproject').unsigned().nullable()
-            table.string('describe').unsigned().nullable()
+            table.string('name').notNullable()
+            table.string( 'status').notNullable()
+            table.timestamp('FirstDate').nullable()
+            table.timestamp('LastDate').nullable()
+            table.string('TeamManager').nullable()
+            table.string('partners').nullable()
+            table.string('Urlproject').nullable()
+            table.string('describe').nullable()
             table.unique(['Urlproject'])
         })
     }
 
     public async down() {
         this.schema.dropTable(this.tableName)
-        
+
     }
 }

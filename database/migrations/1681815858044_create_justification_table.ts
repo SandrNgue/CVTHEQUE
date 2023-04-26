@@ -6,9 +6,9 @@ export default class Justification extends BaseSchema {
     public async up() {
         this.schema.createTable(this.tableName, (table) => {
             table.engine('InnoDB')
-            table.increments('IdJustification').unsigned().primary()
-            table.string('project_link').unsigned().notNullable()
-            table.string('describe').unsigned().notNullable()
+            table.increments('IdJustification').primary()
+            table.string('project_link').nullable()
+            table.string('describe').nullable()
         })
     }
     public async down() {

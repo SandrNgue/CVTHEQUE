@@ -8,8 +8,7 @@ export default class City extends BaseSchema{
         this.schema.createTable(this.tableName, (table) => {
             table.engine('InnoDB')
             table.increments('numCity').primary()
-            table.string('designation').unsigned().notNullable()
-
+            table.string('designation').nullable()
         })
     }
     public async down() {

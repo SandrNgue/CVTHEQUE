@@ -1,17 +1,17 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
 export default class Phone extends BaseSchema{
-    protected tableName = 'phone'
+    protected tableName = 'phones'
 
     public async up(){
         this.schema.createTable(this.tableName, (table) =>  {
             table.engine('InnoDB')
-            table.increments('idPhone').unsigned().primary()
-            table.integer('phoneNumber').unsigned().notNullable()
-            table.boolean('mobile').unsigned().notNullable()
-            table.boolean('telegram').unsigned().notNullable()
-            table.boolean('whatsapp').unsigned().notNullable()
-            table.string('countrycode').unsigned().notNullable()
+            table.increments('idPhone').primary()
+            table.integer('phoneNumber').nullable()
+            table.boolean('mobile').nullable()
+            table.boolean('telegram').nullable()
+            table.boolean('whatsapp').nullable()
+            table.string('countrycode').nullable()
 
             table.unique(['phoneNumber'])
         })
