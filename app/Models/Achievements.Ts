@@ -1,4 +1,4 @@
-import { column, BaseModel, DateTime  } from "@ioc:Adonis/Lucid/Orm"
+import { column, BaseModel, DateTime } from "@ioc:Adonis/Lucid/Orm"
 
 export default class achievement extends BaseModel{
     @column({isPrimary : true})
@@ -10,10 +10,10 @@ export default class achievement extends BaseModel{
     @column()
     public status :string
 
-    @column.DateTime({autoUptodate: true})
+    @column.DateTime({ autoCreate : true, autoUptodate: true})
     public FirstDate : DateTime
 
-    @column.DateTime({autoUptodate: true})
+    @column.DateTime({autoCreate : true, autoUptodate: true})
     public LastDate :DateTime
 
     @column()

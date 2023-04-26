@@ -3,7 +3,7 @@ import Profile from "./Profile.Ts"
 
 export default class Job_profil extends BaseModel{
     @column({isPrimary: true})
-    public idProfil: number
+    public idJobProfil: number
 
     @column()
     public entitled: string
